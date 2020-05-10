@@ -165,3 +165,7 @@ ipython_config.py
 src/.DS_Store
 .DS_Store
 .vscode/settings.json
+/data/caltech101_40/
+/data/cat-vs-dog_10/
+/data/cifar10_5/
+/data/mnist_5/
