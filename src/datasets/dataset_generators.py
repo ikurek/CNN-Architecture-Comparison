@@ -3,11 +3,12 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 class DatasetGenerators:
 
-    def __init__(self, name, image_size, dataset_dir, grayscale=False):
+    def __init__(self, name, image_size, dataset_dir, batch_size, grayscale=False):
         self.name = name
         self.colormode = self.determine_color_mode(grayscale)
         self.image_size = image_size
         self.dataset_dir = dataset_dir
+        self.batch_size = batch_size
         self.train = self.load_train_dataset_generator()
         self.test = self.load_test_dataset_generator()
         self.validate = self.load_validate_dataset_generator()
@@ -23,7 +24,8 @@ class DatasetGenerators:
         return ImageDataGenerator().flow_from_directory(
             directory=r"{}/{}/train".format(self.dataset_dir, self.name),
             target_size=self.image_size,
-            color_mode=self.colormode
+            color_mode=self.colormode,
+            batch_size=self.batch_size
         )
 
     def load_test_dataset_generator(self) -> ImageDataGenerator:
@@ -31,7 +33,8 @@ class DatasetGenerators:
         return ImageDataGenerator().flow_from_directory(
             directory=r"{}/{}/test".format(self.dataset_dir, self.name),
             target_size=self.image_size,
-            color_mode=self.colormode
+            color_mode=self.colormode,
+            batch_size=self.batch_size
         )
 
     def load_validate_dataset_generator(self) -> ImageDataGenerator:
@@ -39,5 +42,6 @@ class DatasetGenerators:
         return ImageDataGenerator().flow_from_directory(
             directory=r"{}/{}/validate".format(self.dataset_dir, self.name),
             target_size=self.image_size,
-            color_mode=self.colormode
+            color_mode=self.colormode,
+            batch_size=self.batch_size
         )

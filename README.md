@@ -14,4 +14,4 @@
   * [CALTECH101](/notebooks/lenet5/lenet5_caltech101.ipynb)
   
 ## Models
-* [LeNet-5](/src/keras_model/lenet5_keras_model.py)
+* [LeNet-5](/src/keras_model/lenet5_network.py)
