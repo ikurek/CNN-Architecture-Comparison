@@ -1,10 +1,8 @@
 from keras.preprocessing.image import ImageDataGenerator
 
-from src.preprocessing.extract_part_of_dataset import DatasetPartExtractor
+# DatasetPartExtractor().extract('caltech101', 30)
 
-#DatasetPartExtractor().extract('mnist', 10)
-
-datasets = ['caltech101', 'cat-vs-dog', 'cifar10', 'cifar10_10', 'mnist', 'mnist_10']
+datasets = ['caltech101', 'cat-vs-dog_10', 'cifar10', 'cifar10_10', 'mnist', 'mnist_10']
 
 for dataset in datasets:
     print(dataset)
