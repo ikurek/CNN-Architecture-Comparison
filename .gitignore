@@ -164,3 +164,4 @@ ipython_config.py
 /src/temp/
 src/.DS_Store
 .DS_Store
+.vscode/settings.json
