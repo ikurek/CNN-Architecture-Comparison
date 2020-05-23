@@ -1,6 +1,6 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-import paths
+from src.const import paths
 
 
 class DatasetGenerators:
