@@ -2,7 +2,7 @@ import time
 
 import keras
 
-
+# Keras fit() callback that registers time of each fitting epoch
 class TimeHistory(keras.callbacks.Callback):
     def on_train_begin(self, logs={}):
         self.times = []

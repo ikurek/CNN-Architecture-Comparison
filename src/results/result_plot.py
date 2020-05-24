@@ -52,3 +52,15 @@ def plot_learning_history_loss(plot_image_file_path, network_name, dataset_name,
     plt.xlabel('Epoka')
     plt.savefig(plot_image_file_path, dpi=150, transparent=True)
     plt.show()
+
+def plot_loss_comparison(plot_image_file_path, network_name, dataset_name, fit_result):
+    plt.cla()
+    plt.clf()
+    plt.plot(fit_result.epoch, fit_result.history["loss"], '-m', label="Zbiór trenujący")
+    plt.plot(fit_result.epoch, fit_result.history["val_loss"], '-b', label="Zbiór testujący")
+    plt.title(f'{networks.fully_qualified_name(network_name)} / {datasets.fully_qualified_name(dataset_name)}')
+    plt.ylabel('Wartość funkcji straty')
+    plt.xlabel('Epoka')
+    plt.legend(['Zbiór trenujący', 'Zbiór testujący'])
+    plt.savefig(plot_image_file_path, dpi=150, transparent=True)
+    plt.show()

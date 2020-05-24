@@ -3,13 +3,14 @@ from keras.layers import Conv2D, AveragePooling2D, Flatten, Dense
 from keras.models import Sequential
 from keras.losses import categorical_crossentropy
 from src.parameters.metrics import all
+from keras.optimizers import Adam
 
 
 class LeNet5Network:
 
     def __init__(self):
         self.classes = None
-        self.optimizer = 'adam'
+        self.optimizer = Adam()
         self.loss = categorical_crossentropy
         self.metrics = all()
         self.image_size = (32, 32)

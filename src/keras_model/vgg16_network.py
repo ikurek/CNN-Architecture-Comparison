@@ -1,6 +1,7 @@
 from keras import Model
 from keras.applications import VGG16
 from keras.losses import categorical_crossentropy
+from keras.optimizers import Adam
 from src.parameters.metrics import all
 
 
@@ -8,7 +9,7 @@ class VGG16Network:
 
     def __init__(self):
         self.classes = None
-        self.optimizer = 'adam'
+        self.optimizer = Adam()
         self.loss = categorical_crossentropy
         self.metrics = all()
         self.image_size = (224, 224)

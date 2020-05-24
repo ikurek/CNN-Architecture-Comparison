@@ -1,11 +1,11 @@
 from keras import Model
-from keras.applications import ResNet50
+from keras.applications import DenseNet201
 from keras.losses import categorical_crossentropy
 from keras.optimizers import Adam
 from src.parameters.metrics import all
 
 
-class ResNet50Network:
+class DenseNet201Network:
 
     def __init__(self):
         self.classes = None
@@ -25,7 +25,7 @@ class ResNet50Network:
 
     def get_compiled_model(self, classes) -> Model:
         self.classes = classes
-        model: Model = ResNet50(
+        model: Model = DenseNet201(
             include_top=True,
             weights=None,
             classes=self.classes,
